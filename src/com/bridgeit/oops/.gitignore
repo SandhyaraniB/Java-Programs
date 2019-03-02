@@ -11,3 +11,10 @@
 /Stock.class
 /StockDetails.class
 /StockList.class
+/DeckOfCards.class
+/StockAccount.class
+/Queue.class
+/Node.class
+/QueueImplimentation.class
+/SortedDeckOfCards.class
+/SortDeckOfCards.class

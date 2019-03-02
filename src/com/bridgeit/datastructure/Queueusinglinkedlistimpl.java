@@ -31,7 +31,8 @@ public class Queueusinglinkedlistimpl<T>
 		      
 
 	public Object deQueue()
-	{  // If queue is empty, return NULL. 
+	{  
+		// If queue is empty, return NULL. 
         if (front == null) 
             return 0; 
         
