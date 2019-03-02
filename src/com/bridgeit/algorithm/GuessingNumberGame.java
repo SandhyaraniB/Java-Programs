@@ -1,10 +1,8 @@
 package com.bridgeit.algorithm;
-
 import com.bridgeit.exception.InvalidException;
 import com.bridgeit.util.Util;
 public class GuessingNumberGame
 {
-
 	public static void main(String[] args) 
 	{
 	
@@ -24,13 +22,10 @@ public class GuessingNumberGame
 		
         try {
 			Util.guess(arr,0,num-1);
+			
 		} catch (InvalidException e) {
 			System.out.println(e.getMessage());
 		}
 	}
 
-	
-	
-
-
-	}
+}

@@ -1,22 +1,23 @@
-package com.bridgeit.util;
 
+
+import java.io.FileReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
-
+import com.bridgeit.datastructure.List;
 import com.bridgeit.datastructure.StackImplementation;
 import com.bridgeit.exception.InvalidException;
+import com.sun.javafx.scene.paint.GradientUtils.Parser;
+
 
 public class Util 
 {
-	 static Scanner sc =new Scanner(System.in);
+	static Scanner sc =new Scanner(System.in);
 	 
      /**
      * @return take the String from user and print it
@@ -546,7 +547,7 @@ public static boolean isNumber1(String s)
     	 {     
     		 if(sentence.length()>=1)
     		 {
-    			List<String> results = new ArrayList<String>();
+    			List<String> results = (List<String>) new ArrayList<String>();
     			char[] chars = sentence.toCharArray();
     			results.add(new String("" + chars[0]));
     			//looping over every chars 
@@ -1611,10 +1612,10 @@ public static boolean isNumber1(String s)
  		{
  			int row=10,colomn=30;
  			int [][]array=new int[row][colomn];
- 			List<Integer>list=new ArrayList<Integer>();
+ 			ArrayList<Integer>list=new ArrayList<Integer>();
  			int temp=100;
  			int k=0;
- 			list=isPrime(0, 1000);
+ 			list=(ArrayList<Integer>) isPrime(0, 1000);
  			for(int i=0;i<row;i++)
  			{
  				for(int j=0;j<colomn;j++)
@@ -1759,45 +1760,45 @@ public static boolean isNumber1(String s)
 				     
  	    	
 
- 	   	public  boolean AnagramPrime(List<Integer> list1)
- 	   	{
- 	   		int row=10,colomn=30;
- 	   		int [][]array=new int[row][colomn];
- 	   		int temp=100,k=0;
- 	   		//System.out.println(list1);
- 	   		for(int i=0;i<row;i++)
- 	   		{
- 	   			for(int j=0;j<colomn;j++)
- 	   			{
- 	   				if(k<list1.size())
- 	   				{
- 	   					if(list1.get(k)<=temp)
- 	   					{
- 	   						array[i][j]=list1.get(k);
- 	   						k++;
- 	   					}
- 	   				}
- 	   			}
- 	   			temp=temp+100;
- 	   		}
- 	   		System.out.println();
-
- 	   		// printing 2D array
- 	   		for(int i=0;i<row;i++)
- 	   		{
- 	   			for(int j=0;j<colomn;j++)
- 	   			{
- 	   				if(list1.get(j)>0)
- 	   				{
- 	   					if(array[i][j]!=0)
- 	   					{
- 	   						System.out.print(array[i][j]+"\t");
- 	   					}
- 	   				}	
- 	   			}System.out.println();
- 	   		}
-			return false;		
- 	   	}
+// 	   	public  boolean AnagramPrime(List<Integer> list1)
+// 	   	{
+// 	   		int row=10,colomn=30;
+// 	   		int [][]array=new int[row][colomn];
+// 	   		int temp=100,k=0;
+// 	   		//System.out.println(list1);
+// 	   		for(int i=0;i<row;i++)
+// 	   		{
+// 	   			for(int j=0;j<colomn;j++)
+// 	   			{
+// 	   				if(k<list1.size())
+// 	   				{
+// 	   					if(list1.get(k)<=temp)
+// 	   					{
+// 	   						array[i][j]=list1.get(k);
+// 	   						k++;
+// 	   					}
+// 	   				}
+// 	   			}
+// 	   			temp=temp+100;
+// 	   		}
+// 	   		System.out.println();
+//
+// 	   		// printing 2D array
+// 	   		for(int i=0;i<row;i++)
+// 	   		{
+// 	   			for(int j=0;j<colomn;j++)
+// 	   			{
+// 	   				if(list1.get(j)>0)
+// 	   				{
+// 	   					if(array[i][j]!=0)
+// 	   					{
+// 	   						System.out.print(array[i][j]+"\t");
+// 	   					}
+// 	   				}	
+// 	   			}System.out.println();
+// 	   		}
+//			return false;		
+// 	   	}
  	   	
  	   public static int[] convert(String str)
  	   {
@@ -1944,7 +1945,9 @@ public static boolean isNumber1(String s)
 			}
 		return v;
 	}
-    }
+	
+	
+	    }
     
      
 
