@@ -1,25 +1,28 @@
 package com.bridgeit.oops;
+import com.bridgeit.util.Util;
+
+import java.util.Random;
 
 import com.bridgeit.datastructure.QueueImplementation;
-public class SortDeckOfCards {
+public class SortDeckOfCards 
+{
 
 	public static void main(String[] args) 
 	{
-		String PlayeredCard[][]=com.bridgeit.util.Util.cardDistribution();
-		QueueImplementation< QueueImplementation<String>> sortedcard= com.bridgeit.util.Util.cardSort(PlayeredCard);
-        String playername[]= {"player1","player2","player3","player4"};
-        int index=0;
-        while(!sortedcard.isEmpty())
-        {
-        	QueueImplementation<String> temp=(QueueImplementation<String>) sortedcard.deQueue();
-        	System.out.println(playername[index]+"-->");
-        	while(!temp.isEmpty())
-        	{
-        		System.out.println(temp.deQueue()+" ");
-        	}
-        	System.out.println();
-        	index++;
+		Util utility = new Util();
+		int noOfPlayer = 4;
+		int noOfCards = 9;
+		String[] init = utility.assignCards();
+		String[] shuffleCards = utility.shuffleCards(init);
+		String[][] distributedShuffle = utility.distributedCards(shuffleCards, noOfPlayer, noOfCards);
+		System.out.println("Players Cards After Sorting ");		
+		utility.deckOfCardsQueue(distributedShuffle, noOfPlayer, noOfCards);
         }
-	}
-
 }
+
+	
+	
+
+
+
+

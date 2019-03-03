@@ -25,7 +25,7 @@ public class stockd
 			try
 			{
 				Object objj=parser.parse(new FileReader(file));
-				 ObjectMapper obj=(ObjectMapper)objj;
+				 JSONObject obj=(JSONObject)objj;
 				//StockList slist=obj.readValue(file,StockList.class);
 			    slist=new StockList();
 			    jobj=new JSONObject();
@@ -48,8 +48,8 @@ public class stockd
 				    List<com.bridgeit.oops.StockDetails> stocks=slist.getList();
 				    stocks.add(stockdetail);
 				    slist.setList(stocks);
-				     totalValue=totalValue+stock.getTotal();
-			    	obj.writeValue(file, slist);
+				    totalValue=totalValue+stock.getTotal();
+			    	((ObjectMapper) objj).writeValue(file, slist);
 			    	
 			    	System.out.println("totalValue:"+totalValue);
 			         
@@ -66,7 +66,7 @@ public class stockd
 	public static Stock stockpro()
 	{   
 		
-		    long total=0;
+	    long total=0;
 		Stock stock= new Stock();
 		System.out.println("enter the stock name");
 		String name=sc.next();

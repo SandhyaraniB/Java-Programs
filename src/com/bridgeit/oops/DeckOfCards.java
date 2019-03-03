@@ -1,13 +1,26 @@
 package com.bridgeit.oops;
 
 import com.bridgeit.datastructure.QueueImplementation;
-import com.sun.corba.se.impl.javax.rmi.CORBA.Util;
-
+import com.bridgeit.util.Util;
 public class DeckOfCards {
 
 	public static void main(String[] args) 
 	{
-     String[] suits = {"♣","♦","♥","♠"};
+		Util util= new Util();
+		int noOfPlayer = 4;
+		int noOfCards = 9;
+		String[] init = util.assignCards();
+		String[] shuffleCards = util.shuffleCards(init);
+		@SuppressWarnings("unused")
+		String[][] distributedshuffle = util.distributedCards(shuffleCards, noOfPlayer, noOfCards);
+	}
+		
+		
+		
+		
+		
+	}
+   /*  String[] suits = {"♣","♦","♥","♠"};
      String[] rank = {"2","3","4","5","6","7","8", "9","10","Jack","Queen","King","Ace"};
      int SUITS = suits.length;
      int RANKS = rank.length;
@@ -17,7 +30,7 @@ public class DeckOfCards {
      String[] deck = new String[N];
      for (int i = 0; i < RANKS; i++) {
          for (int j = 0; j < SUITS; j++) {
-             deck[SUITS*i + j] = rank[i%13]+""+suits[j/13];
+             deck[SUITS*i + j] = rank[i]+""+suits[j];
          }
      } 
      // shuffle
@@ -33,7 +46,7 @@ public class DeckOfCards {
      // print shuffled deck
      for (int i = 0; i <4; i++)
      {     System.out.println("player"+""+i);
-    	 for(int j = 0;j<9;j++)
+    	 for(int j = 0;j<13;j++)
     	 {
     		  array[i][j] = deck[i];
     		 
@@ -42,8 +55,8 @@ public class DeckOfCards {
      }
      
    
- }
+ }*/
 
-	}
+	
 
 
