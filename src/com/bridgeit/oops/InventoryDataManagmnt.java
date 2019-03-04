@@ -27,27 +27,28 @@ public class InventoryDataManagmnt
 	     
 	      if(Inputname.equals("rice")||Inputname.equals("wheats")||Inputname.equals("pulses"))
 	      {
-	       product.setProductname(Inputname);
-	       
-	       ProductProperty productproperty=input();
-	       
-	       List <ProductProperty> productproperties=new ArrayList<>();
-	       
-	       productproperties.add(productproperty);
-	       
-	       product.setProperties(productproperties);
-	       
-	       List<Product> products=productList.getInventory();
-	       
-	       products.add(product);
-	       
-	       productList.setInventory(products);
-	       
-	       obm.writeValue(file, productList);
+		       product.setProductname(Inputname);
+		       
+		       ProductProperty productproperty=input();
+		       
+		       List <ProductProperty> productproperties=new ArrayList<>();
+		       
+		       productproperties.add(productproperty);
+		       
+		       product.setProperties(productproperties);
+		       
+		       List<Product> products=productList.getInventory();
+		       
+		       products.add(product);
+		       
+		       productList.setInventory(products);
+		       
+		       obm.writeValue(file, productList);
 	      }
 	      else
 	      { 
-	    	  System.out.println("Incurrect input please run code again");}
+	    	  System.out.println("Incurrect input please run code again");
+	    	  }System.out.println(obm);
 		  } 
 		catch(Exception e)
 			{   e.printStackTrace();

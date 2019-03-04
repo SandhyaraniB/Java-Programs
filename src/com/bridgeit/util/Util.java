@@ -1950,118 +1950,7 @@ public static boolean isNumber1(String s)
 		return v;
 	}
 /***********************************************************************************************************/	
-/*	private static void swap(String[][] arr, int x1, int x2, int x3, int x4) 
-	{
-		String temp=arr[x1][x2];
-		arr[x1][x2]=arr[x3][x4];
-		arr[x3][x4]=temp;
-		
-	}
 
-	private static void cardShuffle(String[][] arr) 
-	{
-	   // int N=deck.length;
-	    Random r1=new Random();
-		for (int i = 0; i < arr.length; i++) 
-	     {  
-			int x1=r1.nextInt(4);
-			int x2=r1.nextInt(13);
-			int x3=r1.nextInt(4);
-			int x4=r1.nextInt(13);
-			swap(arr,x1,x2,x3,x4);
-	     }
-	   /* for (int i = 0; i < N; i++) 
-	     {  
-	         int j=(int)(Math.random()*(N));
-	         String[] t = deck[i];
-	         deck[i] = deck[j];
-	         deck[j] = t;
-	     }*/
-	/*}
-	private static void cardInsert(String[][] arr) 
-	{
-	
-		 String[] suits = {"♣","♦","♥","♠"};
-	     String[] rank = {"2","3","4","5","6","7","8", "9","10","Jack","Queen","King","Ace"};
-	     int SUITS = suits.length;
-	     int RANKS = rank.length;
-	     int N = SUITS * RANKS;
-
-	     // initialize deck
-	     
-	     for (int i = 0; i < RANKS; i++) {
-	         for (int j = 0; j < SUITS; j++) {
-	             arr[i][j] = rank[i%13]+" "+suits[j/13];
-	         }
-	     } 
-}
-	
-	public static String[][] cardDistribution() 
-	{
-		String arr[][]=new String[4][13];
-		cardInsert(arr);
-		cardShuffle(arr);
-		String playercard[][]=new String[4][9];
-		for(int i=0;i<playercard.length;i++)
-		{
-			for(int j=0;j<playercard[i].length;j++)
-			{
-				playercard[i][j]=arr[i][j];
-			}
-		}
-		return playercard;
-	}
-
-	
-
-	public static QueueImplementation<QueueImplementation<String>> cardSort(String playercard[][])
-	{
-		QueueImplementation<QueueImplementation<String>> sortedcard=new QueueImplementation<>();
-		String rank[]= {"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"};
-		int arr[] =new int[9];
-		int index=0;
-		for(int i=0;i<4;i++)
-		{
-			for(int j=0;j<9;j++)
-			{
-				String temp[]=(playercard[i][j]+" ").split(" ");
-				for(int k=0;k<13;k++)
-				{
-					if(temp[i].equals(rank[k]))
-					{
-						arr[index]=k;
-						index++;
-					}
-				}
-			}
-			System.out.println();
-			index=0;
-			for(int k1=0;k1<arr.length-1;k1++)
-			{
-				for(int k2=k1+1;k2<arr.length;k2++)
-				{
-					int temp=arr[k1];
-					arr[k1]=arr[k2];
-					arr[k2]=temp;
-					String temp1=playercard[i][k1];
-					playercard[i][k1]=playercard[i][k2];
-					playercard[i][k2]=temp1;
-				}
-			}
-		}
-	
-	for(int i=0;i<playercard.length;i++)
-	{
-		QueueImplementation<String> temp=new QueueImplementation<>();
-		for(int j=0;j<playercard[i].length;j++)
-		{
-			temp.enQueue(playercard[i][j]);
-		}
-		sortedcard.enQueue(temp);
-	}
-	return sortedcard;
-	
-	    }*/
 
 	public String[] assignCards()
 	{
@@ -2113,6 +2002,7 @@ public static boolean isNumber1(String s)
 		 * @param noOfCards : total cards to be distributed in played
 		 * @return cards to be distributed
 		 */
+		//2D array distribution of cards
 		public String[][] distributedCards(String[] deckOfCards, int noOfPlayers , int noOfCards)
 		{
 			System.out.println("\nNow Distributing 9 cards \n");
@@ -2165,10 +2055,11 @@ public static boolean isNumber1(String s)
 		public  void sortCards(String[] cards)
 		{
 			char[] numberRank = {'A','2','3','4','5','6','7','8','9','0','J','Q','K'};
+			//System.out.println("sorting cards");
 			for(int i = 0 ; i < numberRank.length;i++)
 			{
 				for(int j = 0 ; j < cards.length ; j++)
-				{
+				{   
 					String card = cards[j];    
 					char cardRank = card.charAt(0);   //For checking first element in cards array
 					if(cardRank == numberRank[i]) 

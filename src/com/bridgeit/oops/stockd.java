@@ -33,7 +33,7 @@ public class stockd
 			    System.out.println("enter the number of stocks:");
 			    int n=sc.nextInt();
 			    //Stocks stooo= obj.readValue(file, Stocks.class);
-			    
+			    ObjectMapper objm= new ObjectMapper();
 			   
 			    Stock stock;
 			    JSONArray list;
@@ -49,7 +49,7 @@ public class stockd
 				    stocks.add(stockdetail);
 				    slist.setList(stocks);
 				    totalValue=totalValue+stock.getTotal();
-			    	((ObjectMapper) objj).writeValue(file, slist);
+			    	 objm.writeValue(file,slist);
 			    	
 			    	System.out.println("totalValue:"+totalValue);
 			         
@@ -63,6 +63,10 @@ public class stockd
 			//obj.readValue(file, StockList.class);
 			
 }
+	
+	/**
+	 * @return stock properties
+	 */
 	public static Stock stockpro()
 	{   
 		
