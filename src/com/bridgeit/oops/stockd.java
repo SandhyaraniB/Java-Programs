@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import org.json.simple.JSONArray;
@@ -24,8 +25,9 @@ public class stockd
 			
 			try
 			{
-				Object objj=parser.parse(new FileReader(file));
-				 JSONObject obj=(JSONObject)objj;
+				//Object objj=parser.parse(new FileReader(file));
+				// JSONObject obj=(JSONObject)objj;
+				ObjectMapper obj=new ObjectMapper();
 				//StockList slist=obj.readValue(file,StockList.class);
 			    slist=new StockList();
 			    jobj=new JSONObject();
@@ -50,11 +52,10 @@ public class stockd
 				    slist.setList(stocks);
 				    totalValue=totalValue+stock.getTotal();
 			    	 objm.writeValue(file,slist);
-			    	
-			    	System.out.println("totalValue:"+totalValue);
-			         
-			    }
-			    System.out.println(obj);
+			        System.out.println(obj.writerWithDefaultPrettyPrinter().writeValueAsString(slist));
+			        
+			    }System.out.println("totalValue:"+totalValue);
+			    //System.out.println(obj);
 			}
 				catch(Exception e)
 				{
@@ -64,9 +65,6 @@ public class stockd
 			
 }
 	
-	/**
-	 * @return stock properties
-	 */
 	public static Stock stockpro()
 	{   
 		

@@ -17,7 +17,7 @@ public class InventoryDataManagmnt
 		{
 	      ObjectMapper obm= new ObjectMapper(); 
 	      File file= new File("/home/admin1/Desktop/jsonfile/Myjson.json");
-	      ProductList productList=obm.readValue(file,ProductList.class);
+	     ProductList productList=obm.readValue(file,ProductList.class);
 	     
 	      Product product=new Product();
 	      System.out.println("enter the product type");
@@ -27,28 +27,30 @@ public class InventoryDataManagmnt
 	     
 	      if(Inputname.equals("rice")||Inputname.equals("wheats")||Inputname.equals("pulses"))
 	      {
-		       product.setProductname(Inputname);
-		       
-		       ProductProperty productproperty=input();
-		       
-		       List <ProductProperty> productproperties=new ArrayList<>();
-		       
-		       productproperties.add(productproperty);
-		       
-		       product.setProperties(productproperties);
-		       
-		       List<Product> products=productList.getInventory();
-		       
-		       products.add(product);
-		       
-		       productList.setInventory(products);
-		       
-		       obm.writeValue(file, productList);
+	       product.setProductname(Inputname);
+	       
+	       ProductProperty productproperty=input();
+	       
+	       List <ProductProperty> productproperties=new ArrayList<>();
+	       
+	       productproperties.add(productproperty);
+	       
+	       product.setProperties(productproperties);
+	       
+	       List<Product> products=productList.getInventory();
+	       
+	       products.add(product);
+	       
+	       productList.setInventory(products);
+	       
+	       obm.writeValue(file, productList);
+	       //productproperty=obm.readValue(file, ProductProperty.class);
+	       //System.out.println(productList);
+	       System.out.println(obm.writerWithDefaultPrettyPrinter().writeValueAsString(productList));
 	      }
 	      else
 	      { 
-	    	  System.out.println("Incurrect input please run code again");
-	    	  }System.out.println(obm);
+	    	  System.out.println("Incurrect input please run code again");}
 		  } 
 		catch(Exception e)
 			{   e.printStackTrace();
@@ -56,7 +58,10 @@ public class InventoryDataManagmnt
 			}
 	}
 	       
-	       public static ProductProperty input()
+	       /**
+	     * @return product property which contains the type of product and weight,price;
+	     */
+	    public static ProductProperty input()
 	       
 	       { 
 	    	   Scanner sc= new Scanner(System.in);
