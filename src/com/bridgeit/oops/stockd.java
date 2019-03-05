@@ -15,22 +15,18 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class stockd
 {    static long totalValue=0;
 	static Scanner sc=new Scanner(System.in);
-	@SuppressWarnings("unchecked")
 	public  void  StockDetails()
 	{       File file=new File("/home/admin1/Desktop/jj/jsoon.json");
            
-			JSONParser parser=new JSONParser();
-			JSONObject jobj = null;
 			StockList slist;
 			
 			try
 			{
 				//Object objj=parser.parse(new FileReader(file));
 				// JSONObject obj=(JSONObject)objj;
-				ObjectMapper obj=new ObjectMapper();
+				//ObjectMapper obj=new ObjectMapper();
 				//StockList slist=obj.readValue(file,StockList.class);
 			    slist=new StockList();
-			    jobj=new JSONObject();
 			    System.out.println("stack details:");
 			    System.out.println("enter the number of stocks:");
 			    int n=sc.nextInt();
@@ -38,7 +34,6 @@ public class stockd
 			    ObjectMapper objm= new ObjectMapper();
 			   
 			    Stock stock;
-			    JSONArray list;
 			    StockDetails stockdetail=new StockDetails();
 			    
 			    for(int i=0;i<n;i++)
@@ -51,8 +46,8 @@ public class stockd
 				    stocks.add(stockdetail);
 				    slist.setList(stocks);
 				    totalValue=totalValue+stock.getTotal();
-			    	 objm.writeValue(file,slist);
-			        System.out.println(obj.writerWithDefaultPrettyPrinter().writeValueAsString(slist));
+			    	objm.writeValue(file,slist);
+			        System.out.println(objm.writerWithDefaultPrettyPrinter().writeValueAsString(slist));
 			        
 			    }System.out.println("totalValue:"+totalValue);
 			    //System.out.println(obj);

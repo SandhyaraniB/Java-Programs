@@ -1,6 +1,9 @@
 package com.bridgeit.util;
 
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -1743,16 +1746,16 @@ public static boolean isNumber1(String s)
  	    	 * @param List<String>
  	    	 * @return set<string>
  	    	 */
- 	    	public static Set<String> PrimeAnogram(List<String>new_list)
+ 	    	public static Set<String> PrimeAnogram(java.util.List<String> l1)
 		 	   	{
 		 	   		Set<String>set=new HashSet<String>();
-		 	   		for(int i=0;i<new_list.size();i++)
+		 	   		for(int i=0;i<l1.size();i++)
 		 	   		{
-		 	   			for(int j=i+1;j<new_list.size();j++)
+		 	   			for(int j=i+1;j<l1.size();j++)
 		 	   			{
-		 	   				if(checkAnagram(new_list.get(i), new_list.get(j)))
+		 	   				if(checkAnagram(l1.get(i), l1.get(j)))
 		 	   				{
-		 	   					set.add(new_list.get(i));
+		 	   					set.add(l1.get(i));
 		 	   					//set.add(new_list.get(j));
 		 	   					//System.out.println(new_list.get(i)+" "+new_list.get(j));
 		
@@ -2069,8 +2072,6 @@ public static boolean isNumber1(String s)
 				}
 			}
 		}
-		
-		
 }
     
      

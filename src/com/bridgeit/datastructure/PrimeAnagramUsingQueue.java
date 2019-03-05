@@ -22,7 +22,6 @@ public class PrimeAnagramUsingQueue<T>
 		List<Integer>list=new ArrayList<Integer>();
 		List<Integer>list1=new ArrayList<Integer>();
 		List<String>l1=new ArrayList<String>();
-		list=Util.isPrime(0, 1000);
 		list=util.isPrime(0,1000);
 		for(int i:list)
 		{
