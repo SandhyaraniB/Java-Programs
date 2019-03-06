@@ -1,54 +1,59 @@
 package com.bridgeit.oops;
 
-public class StackImplementationByLL<T>
+import java.util.EmptyStackException;
+public class StackImplementationByLL
 {
-	Node<T> first;
-	Node<T> last;
-	  int size;
-	  
+	int length ;
+	Nodee top;
+	public StackImplementationByLL()
+	{
+		length = 0;
+		top = null;
+	}
+	
+	public void show() 
+	{
+		Nodee nodee = top;
+		while(nodee!=null)
+		{
+			System.out.print(nodee.data+ " --> ");
+			nodee = nodee.next;
+		}
+		//System.out.println(nodee.data);
+	}
+	public String push(String data) 
+	{
+		Nodee node = new Nodee(data, null);
+		node.next = top;
+		top = node;
+		length++;
+		return node.data;
+	}
 
-		public void push(T item) {
-			
-			Node<T> n = new Node<T>(item);
-		    if((first==null)&&(last==null))
-			  {           	 
-		    	first=last=n;
-			  } else
-			  {
-				  last.next=n;
-				  last = n;
-				 // System.out.println("yyuy");
-			  } size++;
-			 
+	public String peek()
+	{
+		if(isEmpty())
+			throw new EmptyStackException();
+		return top.data;
+	}
+	public boolean isEmpty() 
+	{
+		if(length == 0)
+		{
+			return true;
 		}
-		public T pop() {
-			Node<T> temp=first;
-		    Node<T>prev=first;
-			if(isEmpty())
-			{
-				return null;
-			}
-			if(first==last)
-			{
-				first.next=null;
-				last.next=null;
-				return first.data;
-			}
-			while(temp.next!=null)
-			{
-				prev=temp;
-			    temp=temp.next;
-			}
-			last=prev;
-			last.next=null;
-			return temp.data;
-			
-		}public boolean isEmpty() {
-			
-			return (size==0);
+		return false;
+	}
+
+	public String pop() 
+	{
+		if(isEmpty())
+		{
+			throw new EmptyStackException();
 		}
-		public int size() {
-			
-			return size;
-		}
+		String result = top.data;
+		top = top.next;
+		length--;
+		return result;
+	}
 }

@@ -73,9 +73,17 @@ public class StackImplementation<T> implements Stack<T>
 	}
 	@Override
 	public void print() {
-		// TODO Auto-generated method stub
 		
-	}
+			com.bridgeit.datastructure.Node<T> node = last;
+			while(node!=null)
+			{
+				System.out.print(node.data+ " --> ");
+				node = node.next;
+			}
+			//System.out.println(node.data);
+		}
+		
+	
 	@Override
 	public boolean isempty() {
 		// TODO Auto-generated method stub

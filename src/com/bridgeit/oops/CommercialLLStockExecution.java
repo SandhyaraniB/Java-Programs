@@ -1,17 +1,19 @@
 package com.bridgeit.oops;
+
 import java.util.Scanner;
 
 import com.bridgeit.util.Util;
 
-public class CommercialStock
-{
-	public static void main(String[] args) throws Exception 
-	{		
+public class CommercialLLStockExecution {
+
+	public static void main(String[] args) throws Exception
+	{
+		LinkedListImplementation<String> ll=new LinkedListImplementation<>();
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);
 		@SuppressWarnings("unused")
 		Util utility = new Util();
-		CommercialStockMethods stock = new CommercialStockMethods();
+		CommercialLLStockMethod stock = new CommercialLLStockMethod();
 		char ch;
 		System.out.println("****Welcome to Stock Market****");
 		do
@@ -21,7 +23,6 @@ public class CommercialStock
 			System.out.println("2. Buy");
 			System.out.println("3. Sell");
 			System.out.println("4. Print Reporty");
-			
 			int choice = scanner.nextInt();//utility.inputInteger();			
 			switch(choice)
 			{
@@ -35,7 +36,7 @@ public class CommercialStock
 					stock.sellStock();
 					break;
 				case 4 : 
-					stock.printReport();	
+					stock.printReport();
 				default :
 					break;			
 			}
@@ -43,4 +44,16 @@ public class CommercialStock
 			ch = scanner.next().charAt(0);
 		}while(ch=='Y' || ch == 'y');
 	}
-}
+//		System.out.println("list is empty:"+ll.isEmpty());
+//		ll.add("1");
+//		ll.add("2");
+//		//ll.add("muru");
+//		System.out.println(ll.size());
+//		ll.print();
+//		System.out.println(ll.remove("1"));
+//		ll.print();
+//		System.out.println("size is:"+ll.size());
+//		System.out.println(ll.isEmpty());
+	}
+
+
