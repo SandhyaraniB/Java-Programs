@@ -194,33 +194,35 @@ public class Util
      * @throws InvalidException 
      */
    
-    public static List<Integer> primeFactor(int num) throws InvalidException
-     {   List<Integer> primefactors = new ArrayList<>();
-    if(num>1)
-    {
-    	 while(num%2==0)
-    		 {
-    		primefactors.add(2);
-    			 num/=2;
-    		 }
-    	 //to get prime number,n must be odd in this type
-    		 for(int i=3;i*i<=num;i+=2)
-    		 { while(num%i==0)
-    		    {
-    			 primefactors.add(i);
-    			 num/=i;
-    		    }
-    		 }
-    		 //to print the number and handle the code
-    	    if(num>2)
-    	    {  primefactors.add(num);}
-    	    
-    	    	  return primefactors;
-     }
+    public static ArrayList<Integer> primeFactor(int num) throws InvalidException
+     { 
+    	//List<Integer> primefactors = new ArrayList<>();
+    	ArrayList<Integer> primefactors=new ArrayList<>();
+	    if(num>1)
+	    {
+	    	 while(num%2==0)
+	    		 {
+	    		primefactors.add(2);
+	    			 num/=2;
+	    		 }
+	    	 //to get prime number,n must be odd in this type
+	    		 for(int i=3;i*i<=num;i+=2)
+	    		 { while(num%i==0)
+	    		    {
+	    			 primefactors.add(i);
+	    			 num/=i;
+	    		    }
+	    		 }
+	    		 //to print the number and handle the code
+	    	    if(num>2)
+	    	    {  primefactors.add(num);}
+	    	    
+	    	    	  return primefactors;
+	     }
            
     	    throw new InvalidException("num  is invalid");
 
-    	}
+    }
 
      
      
@@ -550,11 +552,12 @@ public static boolean isNumber1(String s)
     	 * @return   String array
     	 * @throws InvalidException
     	 */
-    	public static String[] permuteUsingIte(String sentence)throws InvalidException
+    	@SuppressWarnings("unchecked")
+		public static String[] permuteUsingIte(String sentence)throws InvalidException
     	 {     
     		 if(sentence.length()>=1)
     		 {
-    			List<String> results = (List<String>) new ArrayList<String>();
+    			ArrayList<String> results = new ArrayList<String>();
     			char[] chars = sentence.toCharArray();
     			results.add(new String("" + chars[0]));
     			//looping over every chars 
@@ -1712,9 +1715,9 @@ public static boolean isNumber1(String s)
  	    	 * @param u int upper value
  	    	 * @return list of primes
  	    	 */
- 	    	public static List<Integer> isPrime(int l,int u)
+ 	    	public static ArrayList<Integer> isPrime(int l,int u)
 		 	    {
-		 	   		List<Integer>list=new ArrayList<>();
+		 	   		ArrayList<Integer>list=new ArrayList<Integer>();
 		 	   		int flag=0;
 		 	   		for(int i = l; i <= u; i++)
 		 	   		{
@@ -1746,7 +1749,7 @@ public static boolean isNumber1(String s)
  	    	 * @param List<String>
  	    	 * @return set<string>
  	    	 */
- 	    	public static Set<String> PrimeAnogram(java.util.List<String> l1)
+ 	    	public static Set<String> PrimeAnagram(java.util.ArrayList<String> l1)
 		 	   	{
 		 	   		Set<String>set=new HashSet<String>();
 		 	   		for(int i=0;i<l1.size();i++)
@@ -1828,15 +1831,15 @@ public static boolean isNumber1(String s)
 		
 		
 		
-	public static int[] convertIntegers(List<Integer> integers)
-		{
-		    int[] ret = new int[integers.size()];
-		    for (int i=0; i < ret.length; i++)
-		    {
-		        ret[i] = integers.get(i).intValue();
-		    }
-		    return ret;
-		}
+//	public static int[] convertIntegers(List<Integer> integers)
+//		{
+//		    int[] ret = new int[integers.size()];
+//		    for (int i=0; i < ret.length; i++)
+//		    {
+//		        ret[i] = integers.get(i).intValue();
+//		    }
+//		    return ret;
+//		}
 	
 	
 	
@@ -2072,6 +2075,7 @@ public static boolean isNumber1(String s)
 				}
 			}
 		}
+
 }
     
      

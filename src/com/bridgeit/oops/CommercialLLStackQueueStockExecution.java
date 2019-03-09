@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class CommercialLLStackQueueStockExecution {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Throwable 
+	{
 		
 		@SuppressWarnings("resource")
 		Scanner scanner = new Scanner(System.in);

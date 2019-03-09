@@ -16,22 +16,20 @@ public class PrimeAnagramUsingStack<T>
 {
 
 	public static void main(String[] args)
-	{   // creating util
-		Util util=new Util();
+	{   
 		//creating stack
 		StackImplementation<Integer> stack = new StackImplementation<>();
-		Scanner sc= new Scanner(System.in);
 		Set<String>set=new HashSet<String>();
-		List<Integer>list=new ArrayList<Integer>();
-		List<Integer>list1=new ArrayList<Integer>();
-		List<String>l1=new ArrayList<String>();
+		ArrayList<Integer>list=new ArrayList<Integer>();
+		ArrayList<Integer>list1=new ArrayList<Integer>();
+		ArrayList<String>l1=new ArrayList<String>();
 		
-		list=util.isPrime(0,1000);
+		list=Util.isPrime(0,1000);
 		for(int i:list)
 		{
 			l1.add(String.valueOf(i));
 		}
-		set=util.PrimeAnogram(l1);
+		set=Util.PrimeAnagram(l1);
 		for(String str:set)
 		{
 			list1.add(Integer.valueOf(str));

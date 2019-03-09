@@ -19,15 +19,15 @@ public class PrimeAnagramUsingQueue<T>
 		Queueusinglinkedlistimpl<Integer> queue= new Queueusinglinkedlistimpl<Integer>();
 		Scanner sc= new Scanner(System.in);
 		Set<String>set=new HashSet<String>();
-		List<Integer>list=new ArrayList<Integer>();
-		List<Integer>list1=new ArrayList<Integer>();
-		List<String>l1=new ArrayList<String>();
-		list=util.isPrime(0,1000);
+		ArrayList<Integer>list=new ArrayList<Integer>();
+		ArrayList<Integer>list1=new ArrayList<Integer>();
+		ArrayList<String>l1=new ArrayList<String>();
+		list=Util.isPrime(0,1000);
 		for(int i:list)
 		{
 			l1.add(String.valueOf(i));
 		}
-		set=util.PrimeAnogram(l1);
+		set=Util.PrimeAnagram(l1);
 		for(String str:set)
 		{
 			list1.add(Integer.valueOf(str));
@@ -43,17 +43,17 @@ public class PrimeAnagramUsingQueue<T>
 		queue.print();
 		System.out.println(" ");
 		System.out.println("deleted elements");
-		//System.out.println(queue.deQueue());
+		System.out.println(queue.deQueue());
 		
-		
-	for(int j=0;j<list1.size();j++)
- 		{Object obj=queue.deQueue();
-		int k=(Integer) obj;
+		for(int j=0;j<list1.size();j++)
+ 		{
+		   Object obj=queue.deQueue();
+		   int k=(Integer) obj;
 			//int t=stack.pop();	// Popping the elements from the stack
-			reverseList.add(k);
+		   reverseList.add(k);
 		}
 	
 		System.out.print(reverseList);
-		}
+	}
 
 }

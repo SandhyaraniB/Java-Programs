@@ -9,7 +9,8 @@ import org.json.simple.parser.ParseException;
 
 public class CliniqueManagementExecution {
 	public static Scanner sc =new Scanner(System.in);
-	public static void main(String args[]) throws IOException, ParseException {
+	public static void main(String args[]) throws IOException, ParseException
+	{
 		ClinicManagementMethods clinicMethods = new ClinicManagementMethods();
 		
 		char ch;

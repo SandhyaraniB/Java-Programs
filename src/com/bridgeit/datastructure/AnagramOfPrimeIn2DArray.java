@@ -23,26 +23,27 @@ import com.bridgeit.util.Util;
 	   {
 		 System.out.println("this is my number :"+s1);
 	   }
-		 
-}
-public class AnagramOfPrimeIn2DArray {
+   }
+  
+public class AnagramOfPrimeIn2DArray 
+{
 	public static void main(String[] args) 
 	    {
-		List<Integer>list=new ArrayList<Integer>();
-			Util u=new Util();
+		    ArrayList<Integer>list=new ArrayList<Integer>();
 			Set<String>set=new HashSet<String>();
 			
-			List<Integer>list1=new ArrayList<Integer>();
-			List<String>l1=new ArrayList<String>();
+			ArrayList<Integer>list1=new ArrayList<Integer>();
+			ArrayList<String>l1=new ArrayList<String>();
+			@SuppressWarnings("resource")
 			Scanner sc= new Scanner(System.in);
 			System.out.println(" anagram primes in 2D array:");
-			list=Util.isPrime(0, 1000);
+			list=Util.isPrime(0,1000);
 			for(int i:list)
 			{
 				l1.add(String.valueOf(i));
 			}
 			l1.forEach(i->System.out.print(i));
-			set=Util.PrimeAnogram(l1);
+			set=Util.PrimeAnagram(l1);
 			for(String str:set)
 			{
 				list1.add(Integer.valueOf(str));
@@ -51,8 +52,9 @@ public class AnagramOfPrimeIn2DArray {
 			list1.forEach(str->System.out.print(str+" "));
 			
 			Collections.sort(list1);
-			u.AnagramPrime(list1);
+			//Util.PrimeAnagram(list1);
 			//lambda expression
+			@SuppressWarnings("unused")
 			print obj=(s)->System.out.println(s);
 			System.out.println("enter the n value");
 	        int m=sc.nextInt();
@@ -101,7 +103,7 @@ public class AnagramOfPrimeIn2DArray {
 	        //print.printInt(ar);*/
 	    }
 	    
-			}
+	}
 
 						
 

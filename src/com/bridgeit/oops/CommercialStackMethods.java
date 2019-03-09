@@ -1,15 +1,18 @@
 package com.bridgeit.oops;
 
 	import java.io.File;
-	import java.io.FileReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 	import java.io.FileWriter;
-	import java.text.SimpleDateFormat;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 	import java.util.Date;
 	import java.util.Scanner;
 
 	import org.json.simple.JSONArray;
 	import org.json.simple.JSONObject;
 	import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import com.bridgeit.util.Util;
 
@@ -23,7 +26,7 @@ import com.bridgeit.util.Util;
 		StackImplementationByLL stack ;
 		QueueLL queue;
 		
-		public void addDetails() throws Exception
+		public void addDetails() throws Throwable 
 		{
 			System.out.println("Enter Whose details you want to add\n1.Company Stock\t2.User Deatils");
 			int choice = scanner.nextInt();
